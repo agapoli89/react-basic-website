@@ -39,5 +39,6 @@ section {
 
 .menu_selected {
   border-bottom-color: yellow;
+  background-color: gray;
 }
 
