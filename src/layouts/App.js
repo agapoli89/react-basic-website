@@ -1,22 +1,30 @@
 import '../styles/App.css';
 import { Component } from 'react';
-import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
-
-const Home = () => <h1>Strona startowa</h1>
-const News = () => <h1>Aktualności</h1>
-const Contact = () => <h1>Kontakt do nas</h1>
-
-const ErrorPage = () => <h1>Strona nie istnieje</h1>
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './Header';
+import Navigation from './Navigation';
+import Page from './Page';
+import Footer from './Footer';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
+
   render() { 
     return ( 
       <Router>
-          Store
+          <div className="app">
+            <header>
+              {<Header />}
+            </header>
+            <main>
+              <aside>
+                {<Navigation />}
+              </aside>
+              <section className="page">
+                {<Page />}
+              </section>
+            </main>
+            <footer>{<Footer />}</footer>
+          </div>
       </Router>
     );
   }
