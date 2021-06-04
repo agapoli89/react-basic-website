@@ -16,7 +16,6 @@ class App extends Component {
   render() { 
     return ( 
       <Router>
-        <>
           <header>
             <nav>
               <ul>
@@ -34,7 +33,6 @@ class App extends Component {
               <Route component={ErrorPage}/>
             </Switch>
           </section>
-        </>
       </Router>
     );
   }
