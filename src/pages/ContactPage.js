@@ -1,7 +1,41 @@
-const ContactPage = () => {
-    return (
-        <div>Kontakt</div>
-    );
+import { Component } from 'react';
+import '../styles/ContactPage.css';
+import { Prompt } from 'react-router-dom';
+
+class ContactPage extends Component {
+    
+    state = {
+        value: "",
+    }
+
+    handleSubmit = e => {
+        e.preventDefault();
+        this.setState({
+            value: "",
+        })
+    }
+
+    handleChange = e => {
+        this.setState({
+            value: e.target.value,
+        })
+    }
+
+    render() { 
+        return ( 
+            <>
+                <form className="contact" onSubmit={this.handleSubmit}>
+                    <h3>Napisz do nas</h3>
+                    <textarea value={this.state.value} onChange={this.handleChange} placeholder="Wpisz wiadomość..."></textarea>
+                    <button>Wyślij</button>
+                </form>
+                <Prompt 
+                    when={this.state.value}
+                    message="Masz niewypełniony formularz. Czy na pewno chcesz opuścić tę stronę"
+                />
+            </>
+         );
+    }
 }
  
 export default ContactPage;
