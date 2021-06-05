@@ -30,7 +30,7 @@ class ContactPage extends Component {
                     <button>Wyślij</button>
                 </form>
                 <Prompt 
-                    when={this.state.value}
+                    when={!!this.state.value}
                     message="Masz niewypełniony formularz. Czy na pewno chcesz opuścić tę stronę"
                 />
             </>
