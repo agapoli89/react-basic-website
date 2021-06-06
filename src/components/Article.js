@@ -11,7 +11,7 @@ const Article = ({ title, author, text }) => {
                 textTransform: "uppercase",
                 fontSize: 20,
             }}>{title}</h3>
-            <span style={{
+            <span className="badge bg-secondary" style={{
                 display: "block",
                 marginBottom: 10,
                 fontSize: 12,
