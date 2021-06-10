@@ -7,6 +7,8 @@ import AdminPage from '../pages/AdminPage';
 import ErrorPage from '../pages/ErrorPage';
 import LoginPage from '../pages/LoginPage';
 
+import AppProvider from '../pages/PermissionContext';
+
 const Page = () => {
     return ( 
         <Switch>
@@ -14,8 +16,10 @@ const Page = () => {
             <Route path="/products" component={ProductListPage} />
             <Route path="/product/:id" component={ProductPage} />
             <Route path="/contact" component={ContactPage} />
-            <Route path="/admin" component={AdminPage} />
-            <Route path="/login" component={LoginPage} />
+            <AppProvider>
+                <Route path="/admin" component={AdminPage} />
+                <Route path="/login" component={LoginPage} />
+            </AppProvider>
             <Route component={ErrorPage} />
         </Switch>
     );
